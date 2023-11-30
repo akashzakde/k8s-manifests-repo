@@ -1,8 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: petclinic
-  namespace: default
+  name: myapp
 spec:
   replicas: 2
   selector:
@@ -15,19 +14,18 @@ spec:
     spec:
       containers:
        - name: server-service
-         image: akashz/spring-petclinic
+         image: akashz/myjava:1.0
          imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: service-entrypoint
-  namespace: default
 spec:
   type: NodePort
   selector:
     service: server
   ports:
-  - port: 8080
-    targetPort: 8080
+  - port: 8081
+    targetPort: 8081
     nodePort: 30001
