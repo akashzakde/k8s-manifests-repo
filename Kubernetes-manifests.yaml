@@ -22,10 +22,9 @@ kind: Service
 metadata:
   name: service-entrypoint
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     service: server
   ports:
-  - port: 8088
-    targetPort: 8088
-    nodePort: 32001
+  - port: 8080
+    targetPort: 8080
