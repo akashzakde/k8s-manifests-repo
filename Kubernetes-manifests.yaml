@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
        - name: server-service
-         image: akashz/myapp:1.0
+         image: akashz/myapp:1
          imagePullPolicy: Always
 ---
 apiVersion: v1
