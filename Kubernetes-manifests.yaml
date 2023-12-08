@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp:31
+  name: myapp:32
 spec:
   replicas: 1
   selector:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
        - name: server-service
-         image: akashz/myapp:31
+         image: akashz/myapp:32
          imagePullPolicy: Always
 ---
 apiVersion: v1
