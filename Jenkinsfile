@@ -2,7 +2,7 @@ pipeline{
     agent any
     tools{
         maven 'MVN'
-        jdk 'JDK11'
+        jdk 'JDK17'
         git 'git'
     }
     environment{
@@ -17,7 +17,7 @@ pipeline{
         stage('Updating Kubernetes deployment file'){
             steps {
                 sh "cat Kubernetes-manifests.yaml"
-                sh "sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' Kubernetes-manifests.yaml"
+                sh "sed -i 's/${APP_NAME}.*/${APP_NAME}:V${IMAGE_TAG}/g' Kubernetes-manifests.yaml"
                 sh "cat Kubernetes-manifests.yaml"
             }
         }
